@@ -1,20 +1,22 @@
 <template>
-    <li >
-        <div>
-            <header>
-                <h3> {{ name }}</h3>
-                <button>Delete</button>
-            </header>
-        </div>
-        <p> {{ description }}</p>
+
+  <li>
+    <base-card>
+      <div>
+        <header>
+          <h3>{{ name }}</h3>
+          <base-button mode="flat">Delete</base-button>
+        </header>
+        <p>{{ description }}</p>
         <nav>
-            <a :href="link">View the resource</a>
+          <a :href="link">View the resource</a>
         </nav>
-    </li>
-        
+      </div>
+    </base-card>
+  </li>
 </template>
 
-<script>
+<script scoped>
 export default {
     props: {
         name: {
@@ -32,6 +34,7 @@ export default {
     },
     data() {
         return {
+             
             
         }
     },
