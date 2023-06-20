@@ -5,7 +5,7 @@
       <div>
         <header>
           <h3>{{ name }}</h3>
-          <base-button mode="flat">Delete</base-button>
+          <base-button @click="deleteResource(id)" mode="flat">Delete</base-button>
         </header>
         <p>{{ description }}</p>
         <nav>
@@ -19,6 +19,10 @@
 <script scoped>
 export default {
     props: {
+        id: {
+            type: String,
+            required: true
+        },
         name: {
             type: String,
             required: true
@@ -32,13 +36,11 @@ export default {
             required: true
         }
     },
-    data() {
-        return {
-             
-            
-        }
-    },
+    inject: ['deleteResource'],
     methods: {
+        deleteResource(id) {
+            this.$emit('remouve-resource', id);
+        }
         
     },
 
